@@ -97,7 +97,7 @@ fn is_non_public_ipv6(ip: Ipv6Addr) -> bool {
 }
 
 /// Normalize host fragments for policy matching (trim whitespace, strip ports/brackets, lowercase).
-pub fn normalize_host(host: &str) -> String {
+pub fn normalize_host(host: &str) -> &str {
     let host = host.trim();
     if host.starts_with('[')
         && let Some(end) = host.find(']')
